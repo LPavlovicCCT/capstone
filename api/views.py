@@ -12,6 +12,13 @@ class BookListView(APIView):
         serializer = BookSerializer(all_books, many=True)
         return Response(serializer.data)
     
+    # POST create a new book in the database
+    def post(self, request, **kwargs):
+        serializer = BookSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
 class BookIndividualView(APIView):
 
     # GET a book from a list
