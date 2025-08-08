@@ -21,13 +21,13 @@ ingress:
 nameOverride: ""
 fullnameOverride: ""
 
-loadSecretsFrom: book-database-postgresql # Name of the secret created by the postgresql helm chart
+loadSecretsFrom: books-database-postgresql # Name of the secret created by the postgresql helm chart
 environmentVariables: # Environment variables we want to configure in the application so we can connect to the database
   - name: DATABASE_USER
     value: books
   - name: DATABASE_NAME
     value: books
   - name: DATABASE_HOST
-    value: book-database-postgresql-0.book-database-postgresql-hl.default.svc.cluster.local # Host of the postgresql database deployed by the Postgres helm chart
+    value: books-database-postgresql-0.books-database-postgresql-hl.default.svc.cluster.local # Host of the postgresql database deployed by the Postgres helm chart
   - name: DEVELOPMENT_MODE
     value: "false"
