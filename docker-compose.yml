@@ -1,0 +1,36 @@
+services:
+
+  # Django bookcatalog app
+  app:
+    # Build the image itself
+    build:
+      # From this files location
+      context: .
+      # Using local dockerfile
+      dockerfile: ./Dockerfile
+    # Expose containers ports
+    ports:
+      - 8000:8000
+    # Set up env variables of the container
+    environment:
+      DATABASE_NAME: "books"
+      DATABASE_USER: "books"
+      DATABASE_PASSWORD: "books"
+      DATABASE_HOST: "db"
+      DEVELOPMENT_MODE: "false"
+    depends_on:
+      - db
+
+  # Database for the bookcatalog
+  db:
+    # Build from image off of dockerhub
+    image: postgres:17.5
+    environment:
+      POSTGRESS_DB: "books"
+      POSTGRES_USER: "books"
+      POSTGRES_PASSWORD: "books"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
