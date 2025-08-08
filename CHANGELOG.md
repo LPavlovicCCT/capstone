@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/LPavlovicCCT/capstone/compare/v1.3.0...v1.4.0) (2025-08-08)
+
+### Features
+
+* Final form of README.md is upon us ([a80d8e4](https://github.com/LPavlovicCCT/capstone/commit/a80d8e4b21aaa551b39d48054e604647a10f7401))
+
 ## [1.3.0](https://github.com/LPavlovicCCT/capstone/compare/v1.2.0...v1.3.0) (2025-08-08)
 
 ### Features
