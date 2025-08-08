@@ -4,6 +4,13 @@ from rest_framework.response import Response
 from .serializer import BookSerializer
 from .models import Book
 
+class HealthView(APIView):
+    def get(self, request, *args, **kwargs):
+        return Response({
+            "status": "ok"
+        })
+
+health_view = HealthView.as_view()
 
 class BookListView(APIView):
     # GET a list of all books from the server
