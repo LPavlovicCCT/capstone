@@ -1,5 +1,5 @@
-Book Catalog API
-Project Overview
+#Book Catalog API
+##Project Overview
 
 This project is a complete implementation of a RESTful API for managing a book catalog. 
 The API is built with the Django REST Framework, containerized using Docker, and deployed to a Kubernetes cluster. 
@@ -9,37 +9,38 @@ This project is a RESTful API for managing a catalog of books, built with Django
 API Usage Examples
 
 The API provides standard CRUD (Create, Read, Update, Delete) endpoints for managing books.
-List All Books
+
+###List All Books
 
 curl http://<YOUR_APP_URL>/api/books/
 
-Create a New Book
+###Create a New Book
 
 curl -X POST \
 -H "Content-Type: application/json" \
 -d '{"title": "Dune", "author": "Frank Herbert", "isbn": "9780441013593", "published_date": "1965-08-01"}' \
 http://<YOUR_APP_URL>/api/books/
 
-Retrieve a Specific Book
+###Retrieve a Specific Book
 
 curl CURL COMMAND HERE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-Update a Book (Partial)
+###Update a Book (Partial)
 
 curl CURL COMMAND HERE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-Delete a Book
+###Delete a Book
 
 curl CURL COMMAND HERE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-Local Development Setup
-Prerequisites
+#Local Development Setup
+##Prerequisites
 
     Docker
 
     Docker Compose
 
-Running the Application
+##Running the Application
 
     Clone the repository:
 
@@ -53,11 +54,11 @@ Running the Application
 
     The API will be available for testing at http://localhost:8000/api/nooks/
 
-CI/CD Pipeline
+#CI/CD Pipeline
 
 This project uses GitHub Actions for CI/CD, with workflows defined in .github/workflows/. The pipeline ensures that code is automatically tested and a new container image is built and published for every change merged to the main branch.
 
-Workflow Stages:
+##Workflow Stages:
 
     Build and Push Workflow (test_views.yml): This workflow only when the there is a merge to the main branch.
 
@@ -66,10 +67,10 @@ Workflow Stages:
     Push to Registry: If the build is on the main branch, the new image is tagged and pushed to the GitHub Container Registry (ghcr.io), making it available for deployment.
 
 
-Kubernetes Deployment with Helm and Argo CD
+#Kubernetes Deployment with Helm and Argo CD
 
 The application is deployed to Kubernetes using a Helm chart and managed via a GitOps workflow with Argo CD.
-Prerequisites:
+##Prerequisites:
 
     A running Kubernetes cluster (k3d).
 
@@ -79,7 +80,7 @@ Prerequisites:
 
     Argo CD installed in the cluster.
 
-Deployment Steps:
+##Deployment Steps:
 
 The deployment is handled automatically by Argo CD. The Argo CD "Application" is configured to:
 
