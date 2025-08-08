@@ -20,7 +20,7 @@ spec:
           command: ["python", "manage.py", "migrate"]
           envFrom:
             - configMapRef:
-                name: {{ include "books-catalog-chart.fullname" . }}-envs
+                name: {{ include "book-catalog-chart.fullname" . }}-envs
           env:
             - name: DATABASE_PASSWORD
               valueFrom:
