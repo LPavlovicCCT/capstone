@@ -14,6 +14,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists
 # Copy the rest of the code now that dependenceis are ready
 COPY . .
+# THis is supposed to fix running permission issue
+RUN chmod +x /app/entrypoint.sh
 # Container runs script on start
 ENTRYPOINT ["/app/entrypoint.sh"]
 
