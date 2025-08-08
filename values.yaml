@@ -1,14 +1,4 @@
-server:
-  ingress:
-    enabled: true
-    path: /argocd
-    annotations:
-      ingress.kubernetes.io/ssl-redirect: "false"
-
-configs:
-  params:
-    server.insecure: true
-    server.basehref: /argocd
-    server.rootpath: '/argocd'
-global:
-  domain: ""
+auth:
+    database: "books"
+    password: "books"
+    username: "books"
