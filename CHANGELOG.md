@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/LPavlovicCCT/capstone/compare/v1.1.1...v1.2.0) (2025-08-08)
+
+### Features
+
+* Added a basic README.md ([519e926](https://github.com/LPavlovicCCT/capstone/commit/519e9263202222b439a502d87ba2fd919c7440ac))
+
 ## [1.1.1](https://github.com/LPavlovicCCT/capstone/compare/v1.1.0...v1.1.1) (2025-08-08)
 
 ### Bug Fixes
