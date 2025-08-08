@@ -91,3 +91,68 @@ The deployment is handled automatically by Argo CD. The Argo CD "Application" is
     Apply Overrides: It applies environment-specific values from the /enviroments/production/values.yaml file.
 
     Auto-Sync: When a new commit is pushed to main, Argo CD automatically syncs the changes, applying the new configuration to the cluster and creating a zero-downtime rolling update.
+
+# Kubernetes and Helm Setup Instructions
+
+The application can be deployed manually to any Kubernetes cluster using the provided Helm chart. The following instructions detail the setup for a local k3d cluster.
+Prerequisites
+
+    A running Kubernetes cluster (k3d).
+
+    kubectl configured to connect to the cluster.
+
+    Helm CLI installed.
+
+# 1. Set Up a Local Cluster (k3d)
+
+If you don't have a local cluster, you can create one quickly with k3d.
+
+## Install k3d (if you don't have it)
+brew install k3d
+
+## Create a new cluster
+k3d cluster create mycluster
+
+# 2. Deploy PostgreSQL Database
+
+The application requires a PostgreSQL database. The easiest way to deploy one is using the Bitnami Helm chart.
+
+## Create a values.yaml file including the following:
+
+    auth:
+        database: "books"
+        password: "books"
+        username: "books"
+
+Then execute the install command for Helm:
+
+    $ helm install books-database oci://registry-1.docker.io/bitnamicharts/postgresql -f ./values.yaml
+
+Wait for the books-database-postgresql-0 pod to be in the Running state before proceeding.
+
+# 3. Create Image Pull Secret
+
+To allow Kubernetes to pull your private image from the GitHub Container Registry (ghcr.io), you must create a secret.
+
+    Create a GitHub Personal Access Token (PAT) with the read:packages scope.
+
+    Create the Kubernetes secret using your PAT:
+
+    kubectl create secret docker-registry ghcr-secret \
+      --docker-server=ghcr.io \
+      --docker-username=<YOUR_GITHUB_USERNAME_LOWERCASE> \
+      --docker-password=<YOUR_PERSONAL_ACCESS_TOKEN>
+
+# 4. Deploy the Application
+
+With the database and secret in place, you can now install the application's Helm chart.
+
+## From the root of the project directory
+    helm install book-catalog ./book-catalog-chart
+
+# 5. Access the Application
+
+Once the book-catalog-... pod is READY 1/1, you can access the API from your local machine.
+
+    Access in browser or with curl:
+    Open http://localhost:8080/api/health/ in your browser.
