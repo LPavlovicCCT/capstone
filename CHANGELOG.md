@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/LPavlovicCCT/capstone/compare/v1.2.0...v1.3.0) (2025-08-08)
+
+### Features
+
+* Added a health check view ([f8c94c3](https://github.com/LPavlovicCCT/capstone/commit/f8c94c3a6757ae0476478de3345e543218679a06))
+
 ## [1.2.0](https://github.com/LPavlovicCCT/capstone/compare/v1.1.1...v1.2.0) (2025-08-08)
 
 ### Features
