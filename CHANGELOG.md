@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/LPavlovicCCT/capstone/compare/v1.0.0...v1.0.1) (2025-08-08)
+
+### Bug Fixes
+
+* Use lowercase for repo andother location ([4ebed0c](https://github.com/LPavlovicCCT/capstone/commit/4ebed0c7e0ba966432f67edccf417160f5ceb0f9))
+
 ## 1.0.0 (2025-08-08)
 
 ### Features
