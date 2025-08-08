@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/LPavlovicCCT/capstone/compare/v1.1.0...v1.1.1) (2025-08-08)
+
+### Bug Fixes
+
+* Replaced the dynamicall inserted username with a hardcoded lowercase version ([7ad7261](https://github.com/LPavlovicCCT/capstone/commit/7ad7261666319be6275edc32d45e559e18266a34))
+
 ## [1.1.0](https://github.com/LPavlovicCCT/capstone/compare/v1.0.1...v1.1.0) (2025-08-08)
 
 ### Features
