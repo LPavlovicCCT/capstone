@@ -1,9 +1,13 @@
 from django.urls import re_path
-from .views import BookListView, BookIndividualView
+from .views import BookListView, BookIndividualView, HealthView
 
 app_name = 'api'
 
 urlpatterns = [
+
+    re_path(
+        r"^health/$", HealthView.as_view(), name='health-check'
+    ),
 
     # GET and POST go to api/books/
     # No ISBN GET gets a list of all books
