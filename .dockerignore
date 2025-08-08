@@ -12,7 +12,6 @@ docker-compose.yml
 venv/
 
 # Python cache
-
 __pycache__/
 *.pyc
 
@@ -27,3 +26,6 @@ __pycache__/
 # Local instance data
 db.sqlite3
 *.log
+
+# Helm chart data
+book-catalog-chart/
