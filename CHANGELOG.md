@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/LPavlovicCCT/capstone/compare/v1.0.1...v1.1.0) (2025-08-08)
+
+### Features
+
+* Added github actions auto deployment ([eabe2cb](https://github.com/LPavlovicCCT/capstone/commit/eabe2cb84c1a8de3da660656f9bff85c8c518a01))
+
 ## [1.0.1](https://github.com/LPavlovicCCT/capstone/compare/v1.0.0...v1.0.1) (2025-08-08)
 
 ### Bug Fixes
